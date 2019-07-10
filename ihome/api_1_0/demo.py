@@ -1,6 +1,13 @@
 # coding: utf-8
+from . import api
+# current_app 是一个全局的app对象
+# from flask import current_app
 
 
-@app.route('/v1.0/index')
+@api.route('/index')
 def index():
-    return 'index page'
+    # current_app.logger.error("error info")
+    # current_app.logger.warn("warn info")
+    # current_app.logger.info("info info")
+    # current_app.logger.debug("debug info")
+    return 'hello index page'

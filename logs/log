@@ -1,0 +1,44 @@
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/ihome/__init__.py', reloading
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/config.py', reloading
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+ERROR demo.py:9 error info
+WARNING demo.py:10 warn info
+INFO demo.py:11 info info
+DEBUG demo.py:12 debug info
+INFO _internal.py:122 127.0.0.1 - - [10/Jul/2019 17:17:26] "GET /api/v1.0/index HTTP/1.1" 200 -
+INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/ihome/api_1_0/demo.py', reloading
+INFO _internal.py:122  * Restarting with stat
+INFO _internal.py:122  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122 127.0.0.1 - - [10/Jul/2019 17:18:45] "GET /api/v1.0/index HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [10/Jul/2019 17:18:46] "GET /api/v1.0/index HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [10/Jul/2019 17:18:46] "GET /api/v1.0/index HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [10/Jul/2019 17:18:46] "GET /api/v1.0/index HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [10/Jul/2019 17:18:47] "GET /api/v1.0/index HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [10/Jul/2019 17:18:48] "GET /api/v1.0/index HTTP/1.1" 200 -
+INFO _internal.py:122  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122 127.0.0.1 - - [10/Jul/2019 17:19:35] "GET /api/v1.0/index HTTP/1.1" 200 -
+INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/ihome/__init__.py', reloading
+INFO _internal.py:122  * Restarting with stat

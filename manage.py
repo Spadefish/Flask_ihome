@@ -1,52 +1,17 @@
 # coding:utf-8
 
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_session import Session
-from flask_wtf import CSRFProtect
-
-import redis
+from ihome import create_app
 
 # 创建flask应用对象
-app = Flask(__name__)
+app = create_app('develop')
 
 
-class Config(object):
-    # 配置信息
-    DEBUG = True
-
-    SECRET_KEY = "XHSOI*Y9dfs9cshd9"
-    # 数据库配置
-    SQLALCHEMY_DATABASE_URI = "mysql://root:t1213121@127.0.0.1:3306/ihome"
-    SQLALCHEMY_TRACK_MODIFICATIONS = True
-
-    # redis
-    REDIS_HOST = '127.0.0.1'
-    REDIS_PORT = 6379
-
-    # flask-session配置
-    SESSION_TYPE = "redis"
-    SESSION_REDIS = redis.StrictRedis(host=REDIS_HOST, port=REDIS_PORT)
-    SESSION_USE_SIGNER = True  # 对cookie中session_id进行隐藏处理
-    PERMANENT_SESSION_LIFETIME = 86400  # session数据的有效期，单位秒
+@app.route('/v1.0/index')
+def index():
+    return 'index page'
 
 
-app.config.from_object(Config)
-
-# 数据库
-db = SQLAlchemy(app)
-
-# 创建redis链接对象
-redis_store = redis.StrictRedis(host=Config.REDIS_HOST, port=Config.REDIS_PORT)
-
-# 利用flask-session，将session数据保存到redis中
-Session(app)
-
-# 为flask补充csrf防护
-CSRFProtect(app)
-
-
-@app.route('/index')
+@app.route('/v2.0/index')
 def index():
     return 'index page'
 

@@ -1,5 +1,6 @@
 # coding: utf-8
 from . import api
+from ihome import db, models
 # current_app 是一个全局的app对象
 # from flask import current_app
 

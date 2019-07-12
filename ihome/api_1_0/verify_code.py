@@ -28,7 +28,7 @@ def get_image_code(image_code_id):
     # redis_store.set('image_code_%s' % image_code_id, text)
     # redis_store.expire('image_code_%s' % image_code_id, constants.IMAGE_CODE_REDIS_EXPIRES)
     try:
-        redis_store.setex('image_code%s' % image_code_id, constants.IMAGE_CODE_REDIS_EXPIRES, text)
+        redis_store.setex('image_code_%s' % image_code_id, constants.IMAGE_CODE_REDIS_EXPIRES, text)
     except Exception as e:
         # 记录日志
         current_app.logger.error(e)

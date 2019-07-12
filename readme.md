@@ -22,6 +22,7 @@
     MarkupSafe        1.1.1
     mysqlclient       1.4.2.post1
     pbr               5.4.0
+    Pillow            6.1.0 (图片处理需要这个包)
     pip               19.1.1
     python-dateutil   2.8.0
     python-editor     1.0.4

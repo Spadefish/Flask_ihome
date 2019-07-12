@@ -1,7 +1,6 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-*.pyc
 *$py.class
 # C extensions
 *.so
@@ -75,7 +74,7 @@ ENV/
 /site
 # mypy
 .mypy_cache/
-.idea/*
+.idea
 desktop.ini
 Icon
 env

@@ -29,13 +29,9 @@
                 <li order-id={{order.order_id}}>
                     <div class="order-title">
                         <h3>订单编号：{{order.order_id}}</h3>
-                        {{ if "WAIT_COMMENT" == order.status }}
+                        {{ if 3 == order.status }}
                         <div class="fr order-operate">
                             <button type="button" class="btn btn-success order-comment" data-toggle="modal" data-target="#comment-modal">发表评价</button>
-                        </div>
-                        {{ else if "WAIT_PAYMENT" == order.status }}
-                        <div class="fr order-operate">
-                            <button type="button" class="btn btn-success order-pay">去支付</button>
                         </div>
                         {{/if}}
                     </div>
@@ -50,22 +46,20 @@
                                 <li>合计金额：￥{{(order.amount/100.0).toFixed(0)}}(共{{order.days}}晚)</li>
                                 <li>订单状态：
                                     <span>
-                                        {{if "WAIT_ACCEPT" == order.status}}
+                                        {{if 0 == order.status}}
                                             待接单
-                                        {{else if "WAIT_PAYMENT" == order.status}}
-                                            待支付
-                                        {{else if "WAIT_COMMENT" == order.status}}
+                                        {{else if 3 == order.status}}
                                             待评价
-                                        {{else if "COMPLETE" == order.status}}
+                                        {{else if 4 == order.status}}
                                             已完成
-                                        {{else if "REJECTED" == order.status}}
+                                        {{else if 6 == order.status}}
                                             已拒单
                                         {{/if}}
                                     </span>
                                 </li>
-                                {{if "COMPLETE" == order.status}}
+                                {{if 4 == order.status}}
                                 <li>我的评价： {{order.comment}}</li>
-                                {{else if "REJECTED" == order.status}}
+                                {{else if 6 == order.status}}
                                 <li>拒单原因： {{order.comment}}</li>
                                 {{/if}}
                             </ul>

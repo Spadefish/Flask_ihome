@@ -2,7 +2,7 @@
 
 from datetime import datetime
 from . import db
-
+from werkzeug.security import generate_password_hash
 
 class BaseModel(object):
     """模型基类，为每个模型补充创建时间与更新时间"""
@@ -25,6 +25,10 @@ class User(BaseModel, db.Model):
     avatar_url = db.Column(db.String(128))  # 用户头像路径
     houses = db.relationship("House", backref="user")  # 用户发布的房屋
     orders = db.relationship("Order", backref="user")  # 用户下的订单
+
+    def generate_password_hash(self, origin_password):
+        # 对密码进行加密
+        self.password_hash = generate_password_hash(origin_password)
 
 
 class Area(BaseModel, db.Model):

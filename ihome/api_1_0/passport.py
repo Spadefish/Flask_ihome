@@ -70,7 +70,10 @@ def register():
 
     # 保存用户数据到数据库中
     user = User(name=mobile, mobile=mobile)
-    user.generate_password_hash(password)
+    # user.generate_password_hash(password)
+
+    user.password = password
+
     try:
         db.session.add(user)
         db.session.commit()

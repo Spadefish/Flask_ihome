@@ -2,11 +2,12 @@
 
 from datetime import datetime
 from . import db
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
+
 
 class BaseModel(object):
     """模型基类，为每个模型补充创建时间与更新时间"""
-    
+
     create_time = db.Column(db.DateTime, default=datetime.now)  # 记录的创建时间
     update_time = db.Column(db.DateTime, default=datetime.now, onupdate=datetime.now)  # 记录的更新时间
 
@@ -48,6 +49,14 @@ class User(BaseModel, db.Model):
     # def generate_password_hash(self, origin_password):
     #     # 对密码进行加密
     #     self.password_hash = generate_password_hash(origin_password)
+
+    def check_password(self, passwd):
+        """
+        检验密码的正确性
+        :param passwd:  用户登录时填写的原始密码
+        :return: 如果正确，返回True， 否则返回False
+        """
+        return check_password_hash(self.password_hash, passwd)
 
 
 class Area(BaseModel, db.Model):

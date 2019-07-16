@@ -96,7 +96,7 @@ class Area(BaseModel, db.Model):
         """
         d = {
             "aid": self.id,
-            "name": self.name
+            "aname": self.name
         }
         return d
 

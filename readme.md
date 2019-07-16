@@ -38,6 +38,7 @@
     Werkzeug          0.15.4
     wheel             0.33.4
     WTForms           2.2.1
+    qiniu             7.2.6 (七牛云服务)
 }
 
 ```

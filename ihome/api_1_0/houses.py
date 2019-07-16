@@ -45,6 +45,7 @@ def get_area_info():
 
     # 将数据保存到redis中
     try:
+        # 一定要设置有效期 因为会有数据的同步问题
         redis_store.setex("area_info", constants.AREA_INFO_REDIS_CACHE_EXPIRES, resp_json)
     except Exception as e:
         current_app.logger.error(e)

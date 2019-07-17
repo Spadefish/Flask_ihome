@@ -9,6 +9,9 @@
     Package           Version
     -irtualenv        16.6.1
     alembic           1.0.11
+    amqp              2.5.0
+    billiard          3.6.0.0
+    celery            4.3.0 (异步任务处理库)
     Flask             0.10.1
     Flask-Migrate     2.5.2
     Flask-MySQLdb     0.2.0
@@ -50,3 +53,5 @@
 **执行数据库迁移文件 python manage.py db migrate -m "init tables"**
 
 **运行数据库升级命令 python manage.py db upgrade**
+
+**引入celery进行短信异步任务处理并进行启动 cd Flask_ihome => celery -A ihome.tasks.task_sms worker -l info**

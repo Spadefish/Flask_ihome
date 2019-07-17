@@ -54,4 +54,4 @@
 
 **运行数据库升级命令 python manage.py db upgrade**
 
-**引入celery进行短信异步任务处理并进行启动 cd Flask_ihome => celery -A ihome.tasks.task_sms worker -l info**
+**引入celery进行短信异步任务处理并进行启动 cd Flask_ihome => celery -A ihome.tasks.main worker -l info**

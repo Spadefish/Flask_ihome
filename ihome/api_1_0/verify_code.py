@@ -9,7 +9,8 @@ from ihome.utils.response_code import RET
 from ihome.models import User
 from ihome.libs.yuntongxun.sms import CCP
 import random
-from ihome.tasks.task_sms import send_sms
+# from ihome.tasks.task_sms import send_sms
+from ihome.tasks.sms.tasks import send_sms
 
 
 # GET 127.0.0.1/api/v1.0/image_codes/<image_code_id>

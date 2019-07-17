@@ -9,4 +9,3 @@ def send_sms(to, data, temp_id):
     """发送短信的异步任务"""
     ccp = CCP()
     ccp.send_template_sms(to, data, temp_id)
-

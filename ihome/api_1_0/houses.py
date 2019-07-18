@@ -343,7 +343,7 @@ def get_house_list():
     end_date = request.args.get("ed", "")  # 用户想要的结束时间
     area_id = request.args.get("aid", "")  # 区域编号
     sort_key = request.args.get("sk", "new")  # 排序关键字
-    page = request.args.get("p")  # 页数
+    page = request.args.get("p", 1)  # 页数
 
     # 处理时间
     try:
@@ -375,7 +375,17 @@ def get_house_list():
         current_app.logger.error(e)
         page = 1
 
-    # 过滤条件的参数列表容器
+    # 获取缓存数据
+    redis_key = "house_%s_%s_%s_%s" % (start_date, end_date, area_id, sort_key)
+    try:
+        resp_json = redis_store.hget(redis_key, page)
+    except Exception as e:
+        current_app.logger.error(e)
+    else:
+        if resp_json:
+            return resp_json, 200, {"Content-Type": "application/json"}
+
+    # 过滤条件的参数列表容器（重写了__eq__方法，里面存的就是sql条件查询语句！！！）
     filter_params = []
 
     # 通过订单时间与用户传过来的时间进行对比 得到冲突的订单
@@ -406,6 +416,8 @@ def get_house_list():
     if area_id:
         filter_params.append(House.area_id == area_id)
 
+    # print(filter_params)
+
     # 查询数据库
     # 补充排序条件
     if sort_key == "booking":  # 入住做多
@@ -433,4 +445,30 @@ def get_house_list():
     # 获取总页数
     total_page = page_obj.pages
 
-    return jsonify(errno=RET.OK, errmsg="OK", data={"total_page": total_page, "houses": houses, "current_page": page})
+    resp_dict = dict(errno=RET.OK, errmsg="OK", data={"total_page": total_page, "houses": houses, "current_page": page})
+    resp_json = json.dumps(resp_dict)
+
+    if page < total_page:
+        # 设置缓存数据（哈希类型存储）
+        redis_key = "house_%s_%s_%s_%s" % (start_date, end_date, area_id, sort_key)
+        try:
+            redis_store.hset(redis_key, page, resp_json)
+            # 设置有效期
+            redis_store.expire(redis_key, constants.HOUES_LIST_PAGE_REDIS_CACHE_EXPIRES)
+        except Exception as e:
+            current_app.logger.error(e)
+
+    return resp_json, 200, {"Content-Type": "application/json"}
+
+# redis_store
+#
+# "house_起始_结束_区域id_排序_页数"
+# (errno=RET.OK, errmsg="OK", data={"total_page": total_page, "houses": houses, "current_page": page})
+#
+#
+#
+# "house_起始_结束_区域id_排序": hash
+# {
+#     "1": "{}",
+#     "2": "{}",
+# }

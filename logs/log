@@ -2420,3 +2420,58 @@ INFO _internal.py:122 127.0.0.1 - - [18/Jul/2019 16:35:14] "GET /api/v1.0/houses
 INFO _internal.py:122 127.0.0.1 - - [18/Jul/2019 16:35:22] "GET /api/v1.0/houses?sk=price-des&p=1&aid=2 HTTP/1.1" 200 -
 INFO _internal.py:122 127.0.0.1 - - [18/Jul/2019 16:35:27] "GET /api/v1.0/houses?sk=price-des&p=1&aid=3 HTTP/1.1" 200 -
 INFO _internal.py:122 127.0.0.1 - - [18/Jul/2019 16:35:31] "GET /api/v1.0/houses?sk=price-des&p=1&aid=2 HTTP/1.1" 200 -
+INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/ihome/api_1_0/houses.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122 127.0.0.1 - - [18/Jul/2019 16:40:09] "GET /api/v1.0/houses?sk=price-des&p=1&aid=2 HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [18/Jul/2019 16:40:10] "GET /api/v1.0/houses?sk=price-des&p=1&aid=2 HTTP/1.1" 200 -
+ERROR houses.py:375 int() argument must be a string or a number, not 'NoneType'
+INFO _internal.py:122 127.0.0.1 - - [18/Jul/2019 16:40:27] "GET /api/v1.0/houses HTTP/1.1" 200 -
+INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/ihome/api_1_0/houses.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/ihome/api_1_0/houses.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122 127.0.0.1 - - [18/Jul/2019 16:42:14] "GET /api/v1.0/houses HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [18/Jul/2019 16:42:16] "GET /api/v1.0/houses HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [18/Jul/2019 16:42:20] "GET /api/v1.0/houses HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [18/Jul/2019 16:42:21] "GET /api/v1.0/houses HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [18/Jul/2019 16:42:22] "GET /api/v1.0/houses HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [18/Jul/2019 16:42:34] "GET /api/v1.0/houses?p=2 HTTP/1.1" 200 -
+INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/ihome/api_1_0/houses.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/ihome/api_1_0/houses.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/ihome/api_1_0/houses.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/ihome/api_1_0/houses.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/ihome/api_1_0/houses.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122 127.0.0.1 - - [18/Jul/2019 17:07:19] "GET /search.html?aid=&aname=&sd=&ed= HTTP/1.1" 304 -
+INFO _internal.py:122 127.0.0.1 - - [18/Jul/2019 17:07:19] "GET /static/images/landlord01.jgp HTTP/1.1" 404 -
+INFO _internal.py:122 127.0.0.1 - - [18/Jul/2019 17:07:27] "GET /api/v1.0/houses?p=2 HTTP/1.1" 200 -
+INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/ihome/constants.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122 127.0.0.1 - - [18/Jul/2019 17:08:39] "GET /api/v1.0/houses?p=2 HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [18/Jul/2019 17:11:07] "GET /api/v1.0/houses HTTP/1.1" 200 -
+INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/ihome/api_1_0/houses.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558

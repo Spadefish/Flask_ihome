@@ -452,8 +452,16 @@ def get_house_list():
         # 设置缓存数据（哈希类型存储）
         redis_key = "house_%s_%s_%s_%s" % (start_date, end_date, area_id, sort_key)
         try:
+            # redis_store.hset(redis_key, page, resp_json)
+            # redis_store.expire(redis_key, constants.HOUES_LIST_PAGE_REDIS_CACHE_EXPIRES)
+
+            # 创建redis管道对象 可以一次执行多个语句
+            pipeline = redis_store.pipeline()
+
+            # 开启执行多个语句的记录
+            pipeline.multi()
+
             redis_store.hset(redis_key, page, resp_json)
-            # 设置有效期
             redis_store.expire(redis_key, constants.HOUES_LIST_PAGE_REDIS_CACHE_EXPIRES)
         except Exception as e:
             current_app.logger.error(e)

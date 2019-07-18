@@ -4,8 +4,8 @@ from qiniu import Auth, put_data, etag, urlsafe_base64_encode
 import qiniu.config
 
 # 需要填写你的 Access Key 和 Secret Key
-access_key = "yV4GmNBLOgQK-1Sn3o4jktGLFdFSrlywR2C-hvsW"
-secret_key = "bixMURPL6tHjrb8QKVg2tm7n9k8C7vaOeQ4MEoeW"
+access_key = "qy1T8BoIi6V0F075QunMInXwupW4tYqCj1FqnLoj"
+secret_key = "ph8iy7EYPf-mETXeQ7MBjJ_MyTXohWugfeVk5wDd"
 
 
 def storage(file_data):

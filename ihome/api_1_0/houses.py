@@ -2,10 +2,10 @@
 
 from . import api
 from ihome.utils.commons import login_required
-from flask import g, current_app, jsonify, request
+from flask import g, current_app, jsonify, request, session
 from ihome.utils.response_code import RET
 from ihome.utils.image_storage import storage
-from ihome.models import Area, House, Facility, HouseImage
+from ihome.models import Area, House, Facility, HouseImage, User, Order
 from ihome import db, constants, redis_store
 import json
 
@@ -215,3 +215,122 @@ def save_house_image():
     image_url = constants.QINIU_URL_DOMAIN + file_name
 
     return jsonify(errno=RET.OK, errmsg="OK", data={"image_url": image_url})
+
+
+@api.route('/user/houses', methods=['GET'])
+@login_required
+def get_user_houses():
+    """获取房东发布的房源信息条目"""
+    user_id = g.user_id
+
+    try:
+        user = User.query.get(user_id)
+        # houses = House.query.filter_by(user_id = user_id)
+        # 在user里面添加了对house的反向引用 可以直接 houses = user.houses
+        houses = user.houses
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="获取数据失败")
+
+    # 将查询到的房屋信息转化为字典存放在列表中
+    houses_list = []
+    if houses:
+        for house in houses:
+            houses_list.append(house.to_basic_dict())
+
+    return jsonify(errno=RET.OK, errmsg="OK", data={"houses": houses_list})
+
+
+@api.route('/houses/index', methods=['GET'])
+def get_house_index():
+    """获取首页房屋的主要信息"""
+    # 尝试从缓存中读取数据
+    try:
+        ret = redis_store.get('home_page_data')
+    except Exception as e:
+        current_app.logger.error(e)
+        ret = None
+
+    if ret:
+        current_app.logger.info("hit house index info redis")
+        # 因为redis中保存的是json字符串，所以直接进行字符串拼接返回
+        return '{"error": 0, "errmsg": "OK", "data": %s}' % ret, 200, {"Content-Type": "application/json"}
+    else:
+        try:
+            # 查询数据库 返回房屋订单数目最多为五条数据
+            houses = House.query.order_by(House.order_count.desc()).limit(constants.HOME_PAGE_MAX_HOUSES)
+        except Exception as e:
+            current_app.logger.error(e)
+            return jsonify(errno=RET.DBERR, errmsg="查询数据失败")
+
+    if not houses:
+        return jsonify(errno=RET.NODATA, errmsg="查询无数据")
+
+    houses_list = []
+    for house in houses:
+        # 如果房屋未设置主图片 则跳过
+        if not house.index_image_url:
+            continue
+        houses_list.append(house.to_basic_dict())
+
+    # 将数据转换为json,并保存到redis缓存
+    json_houses = json.dumps(houses_list)  # "[{}, {}, {}]"
+
+    try:
+        redis_store.setex('home_page_data', constants.HOME_PAGE_DATA_REDIS_EXPIRES, json_houses)
+    except Exception as e:
+        current_app.logger.error(e)
+
+    return '{"errno":0, "errmsg":"OK", "data":%s}' % json_houses, 200, {"Content-Type": "application/json"}
+
+
+@api.route('/houses/<int:house_id>', methods=['GET'])
+def get_house_detail(house_id):
+    """获取房屋详情"""
+    # 前端在房屋详情页面展示时，如果浏览页面的用户不是该房屋的房东，则展示预定按钮，否则不展示，
+    # 所以需要后端返回登录用户的user_id
+    # 尝试获取用户登录的信息，若登录，则返回给前端登录用户的user_id，否则返回user_id=-1
+    user_id = session.get('user_id', -1)
+
+    # 校验参数
+    if not house_id:
+        return jsonify(errno=RET.PARAMERR, errmsg="参数错误")
+
+    # 先从redis缓存中获取信息
+    try:
+        ret = redis_store.get('house_info_%s' % house_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        ret = None
+
+    if ret:
+        current_app.logger.info("hit house info redis")
+        return '{"errno":"0", "errmsg":"OK", "data":{"user_id":%s, "house":%s}}' % (user_id, ret), \
+               200, {"Content-Type": "application/json"}
+
+    # 缓存数据不存在就查询数据库
+    try:
+        house = House.query.get(house_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="查询数据失败")
+
+    # 将房屋对象数据转化为字典
+    try:
+        house_data = house.to_full_dict()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DATAERR, errmsg="数据出错")
+
+    # 将数据存放到redis中
+    json_house = json.dumps(house_data)
+    try:
+        redis_store.setex('house_info_%s' % house_id, constants.HOUSE_DETAIL_REDIS_EXPIRE_SECOND, json_house)
+    except Exception as e:
+        current_app.logger.error(e)
+
+    resp = '{"errno":"0", "errmsg":"OK", "data":{"user_id":%s, "house":%s}}' % (user_id, json_house), \
+           200, {"Content-Type": "application/json"}
+    return resp
+        
+

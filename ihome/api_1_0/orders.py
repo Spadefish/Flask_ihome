@@ -179,3 +179,51 @@ def accept_reject_order(order_id):
 
     return jsonify(errno=RET.OK, errmsg="OK")
 
+
+@api.route('/orders/<int:order_id>/comment', methods=['PUT'])
+@login_required
+def save_order_comment(order_id):
+    """保存订单评论信息"""
+    user_id = g.user_id
+
+    # 获取参数
+    req_data = request.get_json()
+    comment = req_data.get('comment')  # 评价信息
+
+    # 检查参数
+    if not comment:
+        return jsonify(errno=RET.PARAMERR, errmsg="参数错误")
+
+    try:
+        # 需要确保只能评论自己下的订单，而且订单处于待评价状态才可以
+        order = Order.query.filter(Order.id == order_id, Order.user_id == user_id, Order.status == "WAIT_COMMENT").first()
+        house = order.house
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="无法获取订单数据")
+
+    if not order:
+        return jsonify(errno=RET.REQERR, errmsg="操作无效")
+
+    try:
+        # 将订单状态设置为已完成
+        order.status = 'COMPLETE'
+        # 保存订单评价信息
+        order.comment = comment
+        # 将房屋的完成订单数增加1
+        house.order_count += 1
+        db.session.add(order)
+        db.session.add(house)
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        db.session.rollback()
+        return jsonify(errno=RET.DBERR, errmsg="操作失败")
+
+    # 因为房屋详情中有订单的评价信息，为了让最新的评价信息展示在房屋详情中，所以删除redis中关于本订单房屋的详情缓存
+    try:
+        redis_store.delete("house_info_%s" % order.house.id)
+    except Exception as e:
+        current_app.logger.error(e)
+
+    return jsonify(errno=RET.OK, errmsg="OK")

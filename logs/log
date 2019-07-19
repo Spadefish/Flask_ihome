@@ -3691,3 +3691,62 @@ INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:11:47] "GET /api/v1.0/houses
 INFO houses.py:25 hit redis area_info
 INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:11:47] "GET /api/v1.0/areas HTTP/1.1" 200 -
 INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:11:47] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/ihome/api_1_0/orders.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/ihome/api_1_0/orders.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/ihome/api_1_0/orders.py', reloading
+INFO _internal.py:122  * Restarting with stat
+INFO _internal.py:122  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:35:25] "GET / HTTP/1.1" 304 -
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:35:25] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO houses.py:256 hit house index info redis
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:35:25] "GET /api/v1.0/houses/index HTTP/1.1" 200 -
+INFO houses.py:25 hit redis area_info
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:35:25] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:35:25] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO houses.py:25 hit redis area_info
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:35:27] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:35:27] "GET /api/v1.0/houses?aid=&sd=&ed=&sk=new&p=1 HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:35:30] "GET /api/v1.0/houses?aid=&sd=&ed=&sk=new&p=2 HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:35:31] "GET /detail.html?id=7 HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:35:31] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO houses.py:308 hit house info redis
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:35:31] "GET /api/v1.0/houses/7 HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:35:33] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO houses.py:308 hit house info redis
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:35:33] "GET /api/v1.0/houses/7 HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:35:38] "POST /api/v1.0/orders HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:35:43] "GET /booking.html?hid=7 HTTP/1.1" 304 -
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:35:43] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO houses.py:308 hit house info redis
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:35:43] "GET /api/v1.0/houses/7 HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:35:54] "POST /api/v1.0/orders HTTP/1.1" 200 -
+ERROR orders.py:117 'BaseQuery' object has no attribute 'filer'
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:35:54] "GET /api/v1.0/user/orders?role=custom HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:36:21] "GET /orders.html HTTP/1.1" 304 -
+ERROR orders.py:117 'BaseQuery' object has no attribute 'filer'
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:36:21] "GET /api/v1.0/user/orders?role=custom HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:36:23] "GET /orders.html HTTP/1.1" 304 -
+ERROR orders.py:117 'BaseQuery' object has no attribute 'filer'
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:36:23] "GET /api/v1.0/user/orders?role=custom HTTP/1.1" 200 -
+INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/ihome/api_1_0/orders.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:37:13] "GET /orders.html HTTP/1.1" 304 -
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:37:13] "GET /api/v1.0/user/orders?role=custom HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:37:20] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:37:22] "GET /api/v1.0/user/orders?role=custom HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [19/Jul/2019 17:38:41] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/ihome/api_1_0/orders.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558

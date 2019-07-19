@@ -89,3 +89,37 @@ def save_order():
         db.session.rollback()
         return jsonify(errno=RET.DBERR, errmsg="保存订单失败")
     return jsonify(errno=RET.OK, errmsg="OK", data={"order_id": order.id})
+
+
+# /api/v1.0/user/orders?role=custom  or  role=landlord
+@api.route('/user/orders', methods=['GET'])
+@login_required
+def get_user_orders():
+    """查询用户的订单信息"""
+    user_id = g.user_id
+
+    # 用户的身份，用户想要查询作为房客预订别人房子的订单，还是想要作为房东查询别人预订自己房子的订单
+    role = request.args.get('role', '')
+
+    # 查询订单数据
+    try:
+        if role == 'landlord':
+            # 以房东的身份查询订单
+            # 先查询自己的房子有那些
+            houses = House.query.filter(House.user_id == user_id).all()
+            houses_ids = [house.id for house in houses]
+            # 再查询预定了自己的房子有那些(在订单里面找预定了自己的房子的订单)
+            orders = Order.query.filter(Order.house_id.in_(houses_ids)).order_by(Order.create_time.desc()).all()
+        else:
+            # 以客人的身份查询自己预定了哪些房子
+            orders = Order.query.filter(Order.user_id == user_id).order_by(Order.create_time.desc()).all()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="查询订单信息失败")
+
+    # 将订单数据转化为字典对象
+    orders_dict_list = []
+    if orders:
+        for order in orders:
+            orders_dict_list.append(order.to_dict())
+    return jsonify(errno=RET.OK, errmsg="OK", data={"orders": orders_dict_list})

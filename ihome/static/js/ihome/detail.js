@@ -23,7 +23,7 @@ $(document).ready(function(){
             $(".swiper-container").html(template("house-image-tmpl", {img_urls:resp.data.house.img_urls, price:resp.data.house.price}));
             $(".detail-con").html(template("house-detail-tmpl", {house:resp.data.house}));
 
-            // resp.user_id为访问页面用户,resp.data.user_id为房东
+            // resp.data.user_id为访问页面用户,resp.data.house.user_id为房东
             if (resp.data.user_id != resp.data.house.user_id) {
                 $(".book-house").attr("href", "/booking.html?hid="+resp.data.house.hid);
                 $(".book-house").show();

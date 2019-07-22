@@ -53,7 +53,7 @@ def create_app(config_name):
     global redis_store
     redis_store = redis.StrictRedis(host=config_class.REDIS_HOST, port=config_class.REDIS_PORT)
 
-    # 利用flask-session，将session数据保存到redis中
+    # 利用第三方拓展flask-session，将session数据保存到redis中
     Session(app)
 
     # 为flask补充csrf防护

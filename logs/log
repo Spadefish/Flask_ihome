@@ -4309,3 +4309,49 @@ INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/ihome
 INFO _internal.py:122  * Restarting with stat
 WARNING _internal.py:122  * Debugger is active!
 INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:30:49] "GET /my.html HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:30:49] "GET /static/css/ihome/my.css HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:30:50] "GET /static/js/ihome/my.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:30:50] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:30:59] "GET / HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:30:59] "GET /static/plugins/swiper/css/swiper.min.css HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:30:59] "GET /static/css/ihome/index.css HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:30:59] "GET /static/plugins/swiper/js/swiper.jquery.min.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:30:59] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:30:59] "GET /static/js/ihome/index.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:30:59] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:30:59] "GET /api/v1.0/houses/index HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:30:59] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:30:59] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:31:00] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:31:01] "DELETE /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:31:01] "GET /index.html HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:31:02] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO houses.py:256 hit house index info redis
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:31:02] "GET /api/v1.0/houses/index HTTP/1.1" 200 -
+INFO houses.py:25 hit redis area_info
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:31:02] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:31:02] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:31:06] "GET /login.html HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:31:06] "GET /static/css/ihome/login.css HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:31:06] "GET /static/js/ihome/login.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:31:19] "POST /api/v1.0/sessions HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:31:19] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:31:19] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO houses.py:256 hit house index info redis
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:31:19] "GET /api/v1.0/houses/index HTTP/1.1" 200 -
+INFO houses.py:25 hit redis area_info
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:31:19] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:31:21] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/ihome/api_1_0/passport.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/ihome/api_1_0/passport.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 404-478-558

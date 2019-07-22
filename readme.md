@@ -42,16 +42,19 @@
     wheel             0.33.4
     WTForms           2.2.1
     qiniu             7.2.6 (七牛云服务)
+    python-alipay-sdk 1.10.1 (阿里云生成签名的工具)
 }
 
 ```
 
 **建立模型类以后的数据库迁移**
 
-**初次迁移 python manage.py db init**
+**a,初次迁移 python manage.py db init**
 
-**执行数据库迁移文件 python manage.py db migrate -m "init tables"**
+**b,执行数据库迁移文件 python manage.py db migrate -m "init tables"**
 
-**运行数据库升级命令 python manage.py db upgrade**
+**c,运行数据库升级命令 python manage.py db upgrade**
+
+**每当对数据模型类里面的字段进行修改之后 都要再重新更新和迁移下数据库的字段 (执行一遍b, c命令)**
 
 **引入celery进行短信异步任务处理并进行启动 cd Flask_ihome => celery -A ihome.tasks.main worker -l info**

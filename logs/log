@@ -4355,3 +4355,79 @@ INFO _internal.py:122  * Detected change in '/Users/hxc/python/Flask_ihome/ihome
 INFO _internal.py:122  * Restarting with stat
 WARNING _internal.py:122  * Debugger is active!
 INFO _internal.py:122  * Debugger PIN: 404-478-558
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:35:56] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:35:56] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO houses.py:256 hit house index info redis
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:35:56] "GET /api/v1.0/houses/index HTTP/1.1" 200 -
+INFO houses.py:25 hit redis area_info
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:35:56] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:35:58] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:35:59] "DELETE /api/v1.0/session HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:35:59] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO houses.py:256 hit house index info redis
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:35:59] "GET /api/v1.0/houses/index HTTP/1.1" 200 -
+INFO houses.py:25 hit redis area_info
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:35:59] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:35:59] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:14] "POST /api/v1.0/sessions HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:14] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO houses.py:256 hit house index info redis
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:14] "GET /api/v1.0/houses/index HTTP/1.1" 200 -
+INFO houses.py:25 hit redis area_info
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:14] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:14] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:15] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:20] "GET /profile.html HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:20] "GET /static/css/ihome/profile.css HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:20] "GET /static/js/jquery.form.min.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:20] "GET /static/js/ihome/profile.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:20] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:22] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:24] "GET /myhouse.html HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:24] "GET /static/css/ihome/myhouse.css HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:24] "GET /static/js/ihome/myhouse.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:24] "GET /api/v1.0/users/auth HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:24] "GET /api/v1.0/user/houses HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:27] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:28] "GET /lorders.html HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:28] "GET /static/js/ihome/lorders.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:28] "GET /api/v1.0/user/orders?role=landlord HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:29] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:30] "GET /api/v1.0/user/orders?role=custom HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:31] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:32] "GET /api/v1.0/users/auth HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:32] "GET /api/v1.0/user/houses HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:34] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:36] "GET /api/v1.0/user/orders?role=landlord HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:37] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:39] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO houses.py:256 hit house index info redis
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:39] "GET /api/v1.0/houses/index HTTP/1.1" 200 -
+INFO houses.py:25 hit redis area_info
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:39] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:39] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:41] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:43] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:47] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:54] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:36:56] "POST /api/v1.0/users/avatar HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:37:34] "POST /api/v1.0/users/avatar HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:37:36] "PUT /api/v1.0/users/name HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:37:39] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:37:41] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO houses.py:256 hit house index info redis
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:37:41] "GET /api/v1.0/houses/index HTTP/1.1" 200 -
+INFO houses.py:25 hit redis area_info
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:37:41] "GET /api/v1.0/areas HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:37:41] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:37:42] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:37:44] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:37:51] "POST /api/v1.0/users/avatar HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:37:53] "PUT /api/v1.0/users/name HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:37:55] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:37:56] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:37:56] "GET /api/v1.0/session HTTP/1.1" 200 -
+INFO houses.py:256 hit house index info redis
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:37:56] "GET /api/v1.0/houses/index HTTP/1.1" 200 -
+INFO houses.py:25 hit redis area_info
+INFO _internal.py:122 127.0.0.1 - - [22/Jul/2019 17:37:56] "GET /api/v1.0/areas HTTP/1.1" 200 -

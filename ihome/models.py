@@ -241,6 +241,7 @@ class Order(BaseModel, db.Model):
         ),
         default="WAIT_ACCEPT", index=True)
     comment = db.Column(db.Text)  # 订单的评论信息或者拒单原因
+    trade_no = db.Column(db.String(80))  # 交易的流水号 支付宝的
 
     def to_dict(self):
         """将订单信息转换为字典数据"""

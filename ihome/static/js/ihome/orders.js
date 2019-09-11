@@ -35,7 +35,7 @@ $(document).ready(function(){
                             location.href = "/login.html";
                         } else if ("0" == resp.errno) {
                             // 引导用户跳转到支付宝连接
-                            location.href = resp.data.pay_url;
+                            // location.href = resp.data.pay_url;
                         }
                     }
                 });

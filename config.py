@@ -12,7 +12,7 @@ class Config(object):
     REDIS_HOST = '127.0.0.1'
     REDIS_PORT = 6379
 
-    # flask-session配置
+    # 拓展库 flask-session配置
     SESSION_TYPE = 'redis'
     SESSION_REDIS = redis.StrictRedis(host=REDIS_HOST, port=REDIS_PORT)
     SESSION_USE_SIGNER = True  # 对cookie中session_id进行隐藏处理
